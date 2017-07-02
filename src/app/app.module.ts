@@ -5,12 +5,15 @@ import {RouterModule, Routes} from '@angular/router'
 import {AppComponent} from './app.component';
 import {LibraryComponent} from './library/library.component';
 import {AboutComponent} from './about/about.component';
+import {LibraryService} from './library/libraryService';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
     declarations: [
         AppComponent,
         LibraryComponent,
-        AboutComponent
+        AboutComponent,
+        HttpModule
     ],
     imports: [
         BrowserModule,
@@ -19,7 +22,7 @@ import {AboutComponent} from './about/about.component';
             {path: 'about', component: AboutComponent}
         ])
     ],
-    providers: [],
+    providers: [LibraryService],
     bootstrap: [AppComponent],
 })
 export class AppModule {
