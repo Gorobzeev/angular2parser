@@ -12,11 +12,11 @@ import {HttpModule} from '@angular/http';
     declarations: [
         AppComponent,
         LibraryComponent,
-        AboutComponent,
-        HttpModule
+        AboutComponent
     ],
     imports: [
         BrowserModule,
+        HttpModule,
         RouterModule.forRoot([
             {path: 'library', component: LibraryComponent},
             {path: 'about', component: AboutComponent}

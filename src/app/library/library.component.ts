@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LibraryService } from './libraryService';
-import { ArticleListDto } from './ArticleListDto';
+import { ArticleListDto } from './articleListDto';
 import {Observable} from 'rxjs/Observable';
 
 @Component({
@@ -9,7 +9,7 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./library.component.css']
 })
 export class LibraryComponent implements OnInit {
-  promiseBooks: Promise<ArticleListDto[]>;
+  observableArticles: Observable<ArticleListDto[]>;
   articles: ArticleListDto[];
   errorMessage: String;
 
@@ -17,8 +17,8 @@ export class LibraryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.promiseBooks = this.LibraryService.getBooksWithPromise();
-    this.promiseBooks.then(
+    this.observableArticles = this.LibraryService.loadArticleList();
+    this.observableArticles.subscribe(
         articles => this.articles = articles,
         error => this.errorMessage = <any>error);
   }
