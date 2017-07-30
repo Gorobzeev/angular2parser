@@ -1,18 +1,18 @@
 <div class="card-text col col-8">
-    <table class="table-hover table-fixed col col-12">
+    <table >
         <thead class="default">
         <tr>
-            <th class="col-md-1">ID</th>
-            <th class="col-md-5">Name</th>
-            <th class="col-md-3">Parse</th>
-            <th class="col-md-3">Operation</th>
+            <th >ID </th>
+            <th >Name </th>
+            <th >Parse </th>
+            <th >Operation </th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let article of articles">
-            <td class="col-md-1">{{article.id}}</td>
-            <td class="col-md-5"><span title={{article.site}}>{{article.name}}</span></td>
-            <td class="col-md-3">
+            <td >{{article.id}}</td>
+            <td ><span title={{article.site}}>{{article.name}}</span></td>
+            <td >
                 <button class="btn btn-success btn-xs btn-block">
                     Load config
                 </button>
@@ -20,7 +20,7 @@
                     TRY!
                 </button>
             </td>
-            <td class="col-md-3">
+            <td >
                 <button class="btn btn-xs btn-block btn-primary">
                     News
                 </button>

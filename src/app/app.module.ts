@@ -4,22 +4,22 @@ import {RouterModule, Routes} from '@angular/router'
 
 import {AppComponent} from './app.component';
 import {LibraryComponent} from './library/library.component';
-import {AboutComponent} from './about/about.component';
 import {LibraryService} from './library/libraryService';
 import {HttpModule} from '@angular/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LibraryComponent,
-        AboutComponent
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         HttpModule,
         RouterModule.forRoot([
             {path: 'library', component: LibraryComponent},
-            {path: 'about', component: AboutComponent}
+            {path: 'login', component: LoginComponent},
         ])
     ],
     providers: [LibraryService],
