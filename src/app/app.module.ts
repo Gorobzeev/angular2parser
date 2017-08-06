@@ -7,6 +7,9 @@ import {LibraryComponent} from './library/library.component';
 import {LibraryService} from './library/libraryService';
 import {HttpModule} from '@angular/http';
 import { LoginComponent } from './login/login.component';
+import {FormsModule} from '@angular/forms';
+import {routing} from './app.routing';
+import { AuthGuard } from './guards/index';
 
 @NgModule({
     declarations: [
@@ -17,12 +20,12 @@ import { LoginComponent } from './login/login.component';
     imports: [
         BrowserModule,
         HttpModule,
-        RouterModule.forRoot([
-            {path: 'library', component: LibraryComponent},
-            {path: 'login', component: LoginComponent},
-        ])
+        FormsModule,
+        routing
     ],
-    providers: [LibraryService],
+    providers: [LibraryService,
+        AuthGuard,
+        AuthenticationService],
     bootstrap: [AppComponent],
 })
 export class AppModule {
