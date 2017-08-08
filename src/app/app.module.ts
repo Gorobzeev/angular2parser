@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import { AuthGuard } from './guards/index';
+import {AuthenticationService} from './_services/authentication.service';
 
 @NgModule({
     declarations: [
