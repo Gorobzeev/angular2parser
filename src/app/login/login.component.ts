@@ -5,7 +5,8 @@ import {AuthenticationService} from '../_services/authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  moduleId: module.id,
 })
 export class LoginComponent implements OnInit {
 
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loading = true;
+    console.log('LoginComponent, login(), username - ' + this.model.username, 'password - ' + this.model.password);
     this.authenticationService.login(this.model.username, this.model.password)
       .subscribe(result => {
         if (result === true) {

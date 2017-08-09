@@ -1,15 +1,15 @@
 <!--<div class="form-group row">-->
-  <form name="form" (ngSubmit)="login()" #f="ngForm" novalidate>
-    <input type="text" placeholder="email" required [(ngModel)]="model.username" #username="ngModel" required/>
-    &nbsp;
-    <input type="text" placeholder="password" required [(ngModel)]="model.password" #password="ngModel" required/>
+  <!--<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>-->
+    <!--<input class="form-control" type="text" placeholder="email" [(ngModel)]="model.username" name="name" required/>-->
+    <!--&nbsp;-->
+    <!--<input class="form-group" type="text" placeholder="password" [(ngModel)]="model.password" name="password" required/>-->
 
-    <button class="btn btn-outline-primary col-12">
-      Login
-    </button>
+    <!--<button class="btn btn-outline-primary col-12">-->
+      <!--Login-->
+    <!--</button>-->
 
-    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-  </form>
+    <!--<div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
+  <!--</form>-->
 
   <!--<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>-->
     <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">-->
@@ -30,3 +30,18 @@
   <!--</form>-->
 <!--</div>-->
 
+<form (ngSubmit)="login()">
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" name="name" [(ngModel)]="model.username" id="name">
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input type="password" name="password" [(ngModel)]="model.password" id="password">
+  </div>
+  <button class="btn btn-outline-primary col-12">
+  Login
+  </button>
+</form>
+
+<div *ngIf="error" class="alert alert-danger">{{error}}</div>

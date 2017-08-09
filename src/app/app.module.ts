@@ -11,12 +11,14 @@ import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import { AuthGuard } from './guards/index';
 import {AuthenticationService} from './_services/authentication.service';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LibraryComponent,
-        LoginComponent
+        LoginComponent,
+        InfoComponent
     ],
     imports: [
         BrowserModule,
