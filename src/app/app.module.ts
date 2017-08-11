@@ -6,30 +6,32 @@ import {AppComponent} from './app.component';
 import {LibraryComponent} from './library/library.component';
 import {LibraryService} from './library/libraryService';
 import {HttpModule} from '@angular/http';
-import { LoginComponent } from './login/login.component';
+import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
-import { AuthGuard } from './guards/index';
+import {AuthGuard} from './guards/index';
 import {AuthenticationService} from './_services/authentication.service';
-import { InfoComponent } from './info/info.component';
+import {InfoComponent} from './info/info.component';
+import {FacebookModule} from 'ngx-facebook';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        LibraryComponent,
-        LoginComponent,
-        InfoComponent
-    ],
-    imports: [
-        BrowserModule,
-        HttpModule,
-        FormsModule,
-        routing
-    ],
-    providers: [LibraryService,
-        AuthGuard,
-        AuthenticationService],
-    bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    LibraryComponent,
+    LoginComponent,
+    InfoComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpModule,
+    FormsModule,
+    routing,
+    FacebookModule.forRoot()
+  ],
+  providers: [LibraryService,
+    AuthGuard,
+    AuthenticationService],
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }
