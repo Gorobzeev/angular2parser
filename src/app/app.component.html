@@ -1,22 +1,20 @@
 <div class="left">
     <span class="glyphicon glyphicon-th-large"></span>
-    <a href="#">
-        <div class="item">
-            <span class="glyphicon glyphicon-home"></span>
-            Home
-        </div>
-    </a>
+    <div class="item" routerLink="">
+        <span class="glyphicon glyphicon-home"></span>
+        Home
+    </div>
     <div class="item" routerLink="/library">
-        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="glyphicon glyphicon-th"></span>
         Parser
     </div>
-    <div class="item" routerLink="/login">
+    <div class="item" routerLink="/info">
         <span class="glyphicon glyphicon-info-sign"></span>
-        Login
+        Info
     </div>
-  <div class="item" routerLink="/info">
-    <span class="glyphicon glyphicon-info-sign"></span>
-    Info
-  </div>
+    <!--<div class="item" routerLink="/login">-->
+        <!--<span class="glyphicon glyphicon-user"></span>-->
+        <!--Login-->
+    <!--</div>-->
 </div>
 <router-outlet></router-outlet>

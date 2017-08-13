@@ -7,7 +7,8 @@ import {InfoComponent} from './info/info.component';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: '', component: LibraryComponent, canActivate: [AuthGuard] },
+    { path: 'library', component: LibraryComponent },
+    { path: '', component: LibraryComponent},
     { path: 'info', component: InfoComponent, canActivate: [AuthGuard] },
 
     // otherwise redirect to home

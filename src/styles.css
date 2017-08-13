@@ -7,7 +7,7 @@ td, th {
 }
 
 .left {
-    background: #000000  ;
+    background: #2F4F4F  ;
     display: inline-block;
     white-space: nowrap;
     width: 50px;
@@ -24,7 +24,7 @@ td, th {
 }
 
 .left:hover {
-    width: 250px;
+    width: 180px;
 }
 
 .item:hover {
