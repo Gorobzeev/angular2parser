@@ -50,4 +50,10 @@
 </button>
 </form>
 
+<form (ngSubmit)="signIn('google')">
+  <button class="btn btn-outline-primary col-12">
+    Login with Google
+  </button>
+</form>
+
 <div *ngIf="error" class="alert alert-danger">{{error}}</div>

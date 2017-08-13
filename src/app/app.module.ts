@@ -13,6 +13,13 @@ import {AuthGuard} from './guards/index';
 import {AuthenticationService} from './_services/authentication.service';
 import {InfoComponent} from './info/info.component';
 import {FacebookModule} from 'ngx-facebook';
+import {Angular2SocialLoginModule} from 'angular2-social-login';
+
+const providers = {
+  'google': {
+    'clientId': '766815925902-2vt11hsft626suogg9rpln70rd031p8v.apps.googleusercontent.com'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import {FacebookModule} from 'ngx-facebook';
     HttpModule,
     FormsModule,
     routing,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    Angular2SocialLoginModule
   ],
   providers: [LibraryService,
     AuthGuard,
@@ -34,4 +42,6 @@ import {FacebookModule} from 'ngx-facebook';
   bootstrap: [AppComponent],
 })
 export class AppModule {
+  constructor() { }
 }
+Angular2SocialLoginModule.loadProvidersScripts(providers);
