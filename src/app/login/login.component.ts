@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
 
     constructor(public _auth: AuthService,
                 private router: Router,
-                private authenticationService: AuthenticationService, private fb: FacebookService) {
+                private authenticationService: AuthenticationService,
+                private fb: FacebookService) {
         const initParams: InitParams = {
             appId: '1861755667486747',
             xfbml: true,

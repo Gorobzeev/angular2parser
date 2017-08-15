@@ -14,34 +14,36 @@ import {AuthenticationService} from './_services/authentication.service';
 import {InfoComponent} from './info/info.component';
 import {FacebookModule} from 'ngx-facebook';
 import {Angular2SocialLoginModule} from 'angular2-social-login';
+import {LoginModule} from './login/login.module';
 
 const providers = {
-  'google': {
-    'clientId': '766815925902-2vt11hsft626suogg9rpln70rd031p8v.apps.googleusercontent.com'
-  }
+    'google': {
+        'clientId': '766815925902-2vt11hsft626suogg9rpln70rd031p8v.apps.googleusercontent.com'
+    }
 };
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LibraryComponent,
-    LoginComponent,
-    InfoComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpModule,
-    FormsModule,
-    routing,
-    FacebookModule.forRoot(),
-    Angular2SocialLoginModule
-  ],
-  providers: [LibraryService,
-    AuthGuard,
-    AuthenticationService],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        LibraryComponent,
+        InfoComponent
+    ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        FormsModule,
+        routing,
+        FacebookModule.forRoot(),
+        Angular2SocialLoginModule,
+        LoginModule
+    ],
+    providers: [LibraryService,
+        AuthGuard,
+        AuthenticationService],
+    bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor() { }
+    constructor() {
+    }
 }
 Angular2SocialLoginModule.loadProvidersScripts(providers);
