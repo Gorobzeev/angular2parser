@@ -1,15 +1,15 @@
 <div class="container" style="text-align:center">
     <div class="col-md-4 " style="float: none !important; margin: 0 auto;">
         <h2 align="center">Authentication</h2>
-        <form name="form" #f="ngForm" novalidate>
+        <form name="form" #f="ngForm" novalidate (ngSubmit)="login()">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" placeholder="Email" name="username" [(ngModel)]="model.username" #username="ngModel" required />
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
             </div>
             <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-            <button class="btn btn-default btn-block" (click)="login()">Sign In</button>
+            <button class="btn btn-default btn-block">Sign In</button>
         <button class="btn btn-default btn-block" (click)="register()">Sign Up</button>
         &nbsp;
         <button type="button" class="btn btn-primary btn-block" (click)="loginWithFacebook()">Sign in with Facebook
