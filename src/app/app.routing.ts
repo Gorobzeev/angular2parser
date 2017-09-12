@@ -6,7 +6,9 @@ import { AuthGuard } from './guards/index';
 import {InfoComponent} from './info/info.component';
 
 const appRoutes: Routes = [
-    { path: 'login', component: LoginComponent },
+    { path: 'login', children: [
+    { path: '', component: LoginComponent }
+        ]},
     { path: 'library', component: LibraryComponent },
     { path: '', component: LibraryComponent},
     { path: 'info', component: InfoComponent, canActivate: [AuthGuard] },
