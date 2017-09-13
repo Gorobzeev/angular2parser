@@ -9,7 +9,7 @@ import {SecureComponent} from './layout/secure';
 import {PublicComponent} from './layout/public';
 
 // Secure Component
-import {HomeComponent} from './secure/home';
+import {HomeComponent} from './public/home';
 
 // Public Component
 import {LoginComponent} from './public/login/login.component';
@@ -22,6 +22,9 @@ import {LibraryService} from './secure/library/libraryService';
 import {AuthenticationService} from './_services/authentication.service';
 import {FacebookModule} from 'ngx-facebook';
 import {Angular2SocialLoginModule} from 'angular2-social-login';
+import { InfoComponent } from './secure/info/info.component';
+import { MenuComponent } from './menu/menu.component';
+import { AboutComponent } from './public/about/about.component';
 
 const providers = {
   'google': {
@@ -39,6 +42,9 @@ const providers = {
     HomeComponent,
     SecureComponent,
     PublicComponent,
+    InfoComponent,
+    MenuComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

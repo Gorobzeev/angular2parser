@@ -42,6 +42,10 @@ export class AuthenticationService {
       });
   }
 
+  isLoggedIn(): boolean {
+    return true;
+  }
+
   logout(): void {
     // clear token remove user from local storage to log user out
     this.token = null;

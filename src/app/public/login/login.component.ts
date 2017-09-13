@@ -32,21 +32,26 @@ export class LoginComponent implements OnInit {
 
 
     ngOnInit() {
-        this.authenticationService.logout();
+        if (this.authenticationService.isLoggedIn()) {
+            this.router.navigate(['/home']);
+        }
+        // this.authenticationService.logout();
     }
 
     login() {
         this.loading = true;
         console.log('LoginComponent, login(), username - ' + this.model.username, 'password - ' + this.model.password);
-        this.authenticationService.login(this.model.username, this.model.password)
-            .subscribe(result => {
-                if (result === true) {
-                    this.router.navigate(['/']);
-                } else {
-                    this.error = 'Username or password is incorrect';
-                    this.loading = false;
-                }
-            });
+        // this.authenticationService.login(this.model.username, this.model.password)
+        //     .subscribe(result => {
+        //         if (result === true) {
+        //             this.router.navigate(['/']);
+        //         } else {
+        //             this.error = 'Username or password is incorrect';
+        //             this.loading = false;
+        //         }
+        //     });
+        localStorage.setItem('currentUser', JSON.stringify({email: 'test@mail.com', token: 'token'}));
+        this.router.navigate(['/home']);
     }
 
     loginWithFacebook(): void {

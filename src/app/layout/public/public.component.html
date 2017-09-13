@@ -1,6 +1,6 @@
-<p>
-  public works!
-</p>
-
-
+<app-menu></app-menu>
+<div class="col-sm-12" *ngIf="!authService.isLoggedIn()">
+    <p>Login</p>
+</div>
+<div *ngIf="authService.isLoggedIn()"><p>Logout</p></div>
 <router-outlet></router-outlet>
