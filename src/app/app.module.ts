@@ -14,6 +14,8 @@ import {AuthenticationService} from './_services/authentication.service';
 import {InfoComponent} from './info/info.component';
 import {FacebookModule} from 'ngx-facebook';
 import {Angular2SocialLoginModule} from 'angular2-social-login';
+import { SimpleLayoutComponent } from './layout/simple-layout.component';
+import {FullLayoutComponent} from './layout/full-layout.component';
 
 const providers = {
   'google': {
@@ -23,6 +25,8 @@ const providers = {
 
 @NgModule({
   declarations: [
+    FullLayoutComponent,
+    SimpleLayoutComponent,
     AppComponent,
     LibraryComponent,
     LoginComponent,
