@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthenticationService} from '../_services/authentication.service';
+import {AuthenticationService} from '../../_services/authentication.service';
 import {FacebookService, InitParams} from 'ngx-facebook';
 import {AuthService} from 'angular2-social-login';
 
@@ -16,9 +16,12 @@ export class LoginComponent implements OnInit {
     loading = false;
     error = '';
 
-    constructor(public _auth: AuthService,
+    constructor(
+      public _auth: AuthService,
                 private router: Router,
-                private authenticationService: AuthenticationService, private fb: FacebookService) {
+                private authenticationService: AuthenticationService,
+      private fb: FacebookService
+) {
         const initParams: InitParams = {
             appId: '1861755667486747',
             xfbml: true,
@@ -70,6 +73,6 @@ export class LoginComponent implements OnInit {
     }
 
     register() {
-        console.log('Registration()')
+        console.log('Registration()');
     }
 }

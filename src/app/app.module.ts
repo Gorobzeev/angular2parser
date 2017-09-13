@@ -1,21 +1,27 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router'
-
-import {AppComponent} from './app.component';
-import {LibraryComponent} from './library/library.component';
-import {LibraryService} from './library/libraryService';
-import {HttpModule} from '@angular/http';
-import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
-import {routing} from './app.routing';
-import {AuthGuard} from './guards/index';
+import {HttpModule} from '@angular/http';
+import {AppRoutingModule} from './app-routing.module';
+
+// Layout
+import {SecureComponent} from './layout/secure';
+import {PublicComponent} from './layout/public';
+
+// Secure Component
+import {HomeComponent} from './secure/home';
+
+// Public Component
+import {LoginComponent} from './public/login/login.component';
+import {AppComponent} from './app.component';
+
+// Common
+import {AuthGuard} from './../common/auth.guard';
+import {LibraryComponent} from './secure/library/library.component';
+import {LibraryService} from './secure/library/libraryService';
 import {AuthenticationService} from './_services/authentication.service';
-import {InfoComponent} from './info/info.component';
 import {FacebookModule} from 'ngx-facebook';
 import {Angular2SocialLoginModule} from 'angular2-social-login';
-import { SimpleLayoutComponent } from './layout/simple-layout.component';
-import {FullLayoutComponent} from './layout/full-layout.component';
 
 const providers = {
   'google': {
@@ -23,27 +29,30 @@ const providers = {
   }
 };
 
+
+
 @NgModule({
   declarations: [
-    FullLayoutComponent,
-    SimpleLayoutComponent,
-    AppComponent,
-    LibraryComponent,
     LoginComponent,
-    InfoComponent
+    LibraryComponent,
+    AppComponent,
+    HomeComponent,
+    SecureComponent,
+    PublicComponent,
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     FormsModule,
-    routing,
+    HttpModule,
+    AppRoutingModule,
     FacebookModule.forRoot(),
     Angular2SocialLoginModule
   ],
-  providers: [LibraryService,
+  providers: [AuthenticationService,
     AuthGuard,
-    AuthenticationService],
-  bootstrap: [AppComponent],
+    LibraryService,
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor() { }

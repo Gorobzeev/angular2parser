@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LibraryService } from './libraryService';
 import { ArticleListDto } from './articleListDto';
 import {Observable} from 'rxjs/Observable';
+import {LibraryService} from './libraryService';
 
 @Component({
   selector: 'app-library',

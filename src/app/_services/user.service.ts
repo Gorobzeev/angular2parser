@@ -1,11 +1,11 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 import { AuthenticationService } from './index';
-import { User } from '../model/user';
 import {Observable} from 'rxjs/Observable';
+import {User} from '../model/user';
 
 @Injectable()
 export class UserService {
