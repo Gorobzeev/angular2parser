@@ -25,6 +25,7 @@ import {Angular2SocialLoginModule} from 'angular2-social-login';
 import { InfoComponent } from './secure/info/info.component';
 import { MenuComponent } from './menu/menu.component';
 import { AboutComponent } from './public/about/about.component';
+import { HeaderComponent } from './header/header.component';
 
 const providers = {
   'google': {
@@ -45,6 +46,7 @@ const providers = {
     InfoComponent,
     MenuComponent,
     AboutComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

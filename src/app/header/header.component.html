@@ -1,0 +1,4 @@
+<div class="navbar">
+  <a href="#" *ngIf="!authService.isLoggedIn()">Login</a>
+  <a href="#logout" *ngIf="authService.isLoggedIn()">Logout</a>
+</div>
