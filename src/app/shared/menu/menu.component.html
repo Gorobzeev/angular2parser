@@ -1,21 +1,12 @@
 <div class="left" *ngIf="authService.isLoggedIn()">
-  <!--<span class="glyphicon glyphicon-th-large"></span>-->
-  <!--<div class="item" routerLink="home">-->
-    <!--<span class="glyphicon glyphicon-home"></span>-->
-    <!--Home-->
-  <!--</div>-->
-  <div class="item" routerLink="/library">
+  <div class="item" routerLink="/user">
     <span class="glyphicon glyphicon-th"></span>
-    Parser
+    Users
   </div>
-  <div class="item" routerLink="/info">
+  <div class="item" routerLink="/store">
     <span class="glyphicon glyphicon-info-sign"></span>
-    Info
+    Stores
   </div>
-  <!--<div class="item" routerLink="/about">-->
-    <!--<span class="glyphicon glyphicon-hand-up"></span>-->
-    <!--About-->
-  <!--</div>-->
   <div class="item" routerLink="/login">
     <span class="glyphicon glyphicon-log-out"></span>
     Logout
