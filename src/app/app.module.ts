@@ -9,7 +9,7 @@ import {SecureComponent} from './layout/secure';
 import {PublicComponent} from './layout/public';
 
 // Secure Component
-import {HomeComponent} from './public/home';
+// import {HomeComponent} from './public/home';
 
 // Public Component
 import {LoginComponent} from './public/login/login.component';
@@ -23,8 +23,8 @@ import {AuthenticationService} from './_services/authentication.service';
 import {FacebookModule} from 'ngx-facebook';
 import {Angular2SocialLoginModule} from 'angular2-social-login';
 import { InfoComponent } from './secure/info/info.component';
-import { MenuComponent } from './menu/menu.component';
-import { AboutComponent } from './public/about/about.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import {RegisterComponent} from 'app/public/register/register.component';
 
 const providers = {
   'google': {
@@ -32,19 +32,16 @@ const providers = {
   }
 };
 
-
-
 @NgModule({
   declarations: [
     LoginComponent,
     LibraryComponent,
     AppComponent,
-    HomeComponent,
     SecureComponent,
     PublicComponent,
     InfoComponent,
     MenuComponent,
-    AboutComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

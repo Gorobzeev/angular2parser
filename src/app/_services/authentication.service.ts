@@ -1,9 +1,8 @@
 ﻿import {Injectable} from '@angular/core';
-import {Http, Headers, Response, RequestOptions} from '@angular/http';
+import {Headers, Http, RequestOptions, Response} from '@angular/http';
 // import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
-import {ContentType} from '@angular/http/src/enums';
 
 
 @Injectable()
@@ -43,7 +42,11 @@ export class AuthenticationService {
   }
 
   isLoggedIn(): boolean {
-    return true;
+    if (localStorage.getItem('currentUser') != null) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   logout(): void {

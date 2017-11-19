@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         if (this.authenticationService.isLoggedIn()) {
-            this.router.navigate(['/home']);
+            this.router.navigate(['/info']);
         }
-        // this.authenticationService.logout();
+        this.authenticationService.logout();
     }
 
     login() {
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         //         }
         //     });
         localStorage.setItem('currentUser', JSON.stringify({email: 'test@mail.com', token: 'token'}));
-        this.router.navigate(['/home']);
+        this.router.navigate(['/info']);
     }
 
     loginWithFacebook(): void {
